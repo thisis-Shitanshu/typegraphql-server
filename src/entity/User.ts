@@ -25,7 +25,7 @@ export class User extends BaseEntity {
     @Column("text", { unique: true })
     email: string;
 
-    @Field()
+    @Field({ complexity: 1 })
     name(@Root() parent: User): string {
         return `${parent.firstName} ${parent.lastName}`;
     };
