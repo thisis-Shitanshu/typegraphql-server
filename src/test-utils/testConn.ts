@@ -1,8 +1,6 @@
-import { createConnection } from 'typeorm';
+import { createConnection } from "typeorm";
 
-export const testConn = (
-    drop: boolean = false
-) => {
+export const testConn = (drop: boolean = false) => {
     return createConnection({
         name: "default",
         type: "postgres",
@@ -13,8 +11,6 @@ export const testConn = (
         database: "typegraphql-example-test",
         synchronize: drop,
         dropSchema: drop,
-        entities: [
-            __dirname + "/..//entity/*.*"
-        ]
+        entities: [__dirname + "/../entity/*.*"]
     });
 };
